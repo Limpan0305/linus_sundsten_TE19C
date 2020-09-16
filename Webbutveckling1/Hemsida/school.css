@@ -3,16 +3,16 @@
     padding:0px;
     font-family: Arial;
 }
-h1 {
-    color:white;
-    position: absolute;
-    margin-top: -8px;
-    font-size: 50px;
+.rubrik {
+    color: white;
 }
 
+h2 {
+    color: white;
+}
 body{   
-    background-image: url(vy.jpg);
-    height: 100vh;
+    background-image: url(Skolan.jpg);
+    height: 82vh;
     background-position: center;
     
 }
@@ -23,9 +23,6 @@ float: right;
 list-style-type: none;
 margin-top: 1px;
 font-size: 29px;
-position: absolute;
-margin-left: 250px;
-margin-top: 42px;
 }
 
 ul li {
