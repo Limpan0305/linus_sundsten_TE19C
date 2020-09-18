@@ -9,9 +9,12 @@
 
 h2 {
     color: white;
+    margin-top: 5%;
+    margin-left: 40%;
+    font-size: 50px;
 }
 body{   
-    background-image: url(Skolan.jpg);
+    background-color: black;
     height: 82vh;
     background-position: center;
     
