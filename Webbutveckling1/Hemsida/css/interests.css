@@ -9,15 +9,13 @@
 
 
 h2 {
-    color:black;
+    color:white;
     margin-top: 5%;
     margin-left: 30%;
     font-size: 50px;
 }
 body{   
-    background-color: darkgreen;
-    height: 100vh;
-    background-position: center;
+    background-color: darkslategray;
     
 }
 .fritid{ 
@@ -42,14 +40,11 @@ ul li a {
 text-decoration: none;
 color: white;
 padding:5 px 20 px;
-border: 1px solid black;
 transition: 0 s ease;
-background-color: black;
 
 }
 
 ul li a:hover {
-    background-color: white;
     color: black;
-    border: white;
+    background-color: white;
 }
