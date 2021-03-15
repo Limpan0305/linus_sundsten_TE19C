@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://koda.nu/simple.js">
+
+    var cat = {x: 100, y: 100, speed: 5};
+    hideMouse();
+
+    playSound("http://spelprogrammering.nu/ljud/musik/Arkanoid_PSID_01", 0.5);
+
+      //mouse = inbyggd funktion
+      function update(){
+        fill("black");
+
+        picture(mouse.x, mouse.y, "http://spelprogrammering.nu/bilder/xwing.png")
+        picture(cat.x, cat.y, "http://spelprogrammering.nu/bilder/tie.png")
+        circle(500, 100, 100, "green")
+        
+        if (keyboard.d){
+          cat.x += cat.speed;
+        }
+        if (keyboard.a){
+          cat.x -= cat.speed;
+        }
+        if (keyboard.w){
+          cat.y -= cat.speed;
+        }
+        if (keyboard.s){
+          cat.y += cat.speed;
+        }
+        var d = distance(cat, mouse); 
+        if (d < 40){
+          playSound("http://spelprogrammering.nu/ljud/effekter/SourceSound/sfx/explosion1.wav");
+          text(50, 50, 20, "Game Over!", "red");
+          stopSound("http://spelprogrammering.nu/ljud/musik/Arkanoid_PSID_01");
+          showMouse();
+          stopUpdate();
+        }
+        var d_maze = distance (mouse.x, mouse.y, 500, 100);
+        if (d_maze < 100){
+          stopUpdate();
+          alert("Game over")
+        }
+      }
+  </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
