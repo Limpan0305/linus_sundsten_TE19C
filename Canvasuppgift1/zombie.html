@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://spelprogrammering.nu/simple.js"
+    var zombies=[];
+    var i = 0;
+    while (i < 10){
+        zombies.push({x: random(totalWidth), y: random(totalHeight), speed: random(1,5)});
+        i+=1
+    }
+
+    playSound("Minecraft Zombie Sounds.mp3", 0.5);
+
+    function update(){
+        clearScreen();
+        fill("green");
+        rectangle(10,10, totalWidth-20, totalHeight-20, "black");
+        var i =0;
+        while(i<1){
+            var zombie = zombies[i];
+            picture(mouse.x-65,mouse.y-150, "Steve.gif");
+            picture(zombie.x, zombie.y, "Minecraft zombie.png");
+
+            if (zombie.x<mouse.x)
+                zombie.x += zombie.speed;
+            else
+            zombie.x -= zombie.speed;
+            if (zombie.y<mouse.y)
+                zombie.y += zombie.speed;
+            else
+            zombie.y -= zombie.speed;
+            if (getPixel(mouse.x, mouse.y).green != 0)
+                {
+                    stopUpdate();
+                    alert("du förlorade");
+
+                }
+            if (distance(mouse, zombie) < 5){
+                alert("Game over");
+                stopSound("Minecraft Zombie Sounds.mp3");
+                showMouse();
+                stopUpdate();
+
+            }
+            i +=1;
+
+        }
+
+    }
+
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombiespel</title>
+</head>
+<body>
+
+</body>
+</html>

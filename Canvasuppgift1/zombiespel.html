@@ -14,11 +14,13 @@
                       speed: random(1,5)});
         i += 1;
     }
-
+    hideMouse(); //Gömmmer musen från spelet
+    
     function update()
     {
         clearScreen();
-        fill("black")
+        fill("red")
+        rectangle(20, 20, totalWidth-40, totalHeight-40, "grey")
 
 
         var i = 0;
@@ -27,8 +29,8 @@
         {
             var zombie = zombies[i];
             
-            picture(zombie.x, zombie.y, "http://spelprogrammering.nu/bilder/zombie.png")
-            picture(mouse.x, mouse.y, "springandes.png")
+            picture(zombie.x, zombie.y, "zombien.png")
+            picture(mouse.x, mouse.y, "man.png")
 
             if (zombie.x < mouse.x) 
                 zombie.x += zombie.speed
@@ -40,14 +42,20 @@
             else
                 zombie.y -= zombie.speed
 
-            if (distance(mouse, zombie) < 5)
+            if (distance(mouse, zombie) < 7)
             {
-                text(50, 70, 40, ("Game Over!"), "red");
+                text(50, 70, 40, ("Game Over! U were caught"), "black");
                 stopUpdate();
             }
+            
             i += 1
+
+            
+            
+            
         }
     }
+    
 </script>
 
 
