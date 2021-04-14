@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://spelprogrammering.nu/simple.js">
+<script src="https://spelprogrammering.nu/simple.js"> //Laddar in mitt bibliotek
 
     var zombies = []; 
     
     var i = 0; 
 
-    while (i < 10)
+    while (i < 10) //Väljer antal zombies som ska vara med i spelet
     {
-        zombies.push({x: random(totalWidth),
+        zombies.push({x: random(totalWidth), //Skapar min zombie på raderna nedan
                       y: random(totalHeight),
                       speed: random(1,5)});
-        i += 1;
+        i += 1; //Lägger till en zombie i taget
     }
     hideMouse(); //Gömmmer musen från spelet
     
-    function update()
+    function update() //Skapar en funktion
     {
-        clearScreen();
-        fill("red")
-        rectangle(20, 20, totalWidth-40, totalHeight-40, "grey")
+        clearScreen(); //Uppdaterar skärmen så den refreshas hela tiden
+        fill("red") //Gör kanten inne i spelet
+        rectangle(20, 20, totalWidth-40, totalHeight-40, "grey") //Skapar bakgrunden inne i spelet
 
 
         var i = 0;
@@ -29,10 +29,10 @@
         {
             var zombie = zombies[i];
             
-            picture(zombie.x, zombie.y, "zombien.png")
-            picture(mouse.x, mouse.y, "man.png")
+            picture(zombie.x, zombie.y, "../bilder/zombien.png") //Bild för zombiesarna
+            picture(mouse.x, mouse.y, "../bilder/man.png") //Bild för spelaren du kan kontrollera
 
-            if (zombie.x < mouse.x) 
+            if (zombie.x < mouse.x) //Nedanför är hur zombiesarna ska rör sig i synk med vart de är relativt med vart din egna spelare är för att zombien ska komma så nära dig som möjligt och ta dig. 
                 zombie.x += zombie.speed
             else
                 zombie.x -= zombie.speed
@@ -42,19 +42,21 @@
             else
                 zombie.y -= zombie.speed
 
-            if (distance(mouse, zombie) < 7)
-            {
-                text(50, 70, 40, ("Game Over! U were caught"), "black");
-                stopUpdate();
-            }
-            
-            i += 1
+            if (keyboard.space) //Går tillbaka till menyn med spacebar
+                window.open("menu.html", "menu.html")
 
-            
-            
+            if (distance(mouse, zombie) < 7) //Räknar ut om zombien tar dig och då avslutas spelet
+            {
+                text(50, 70, 40, ("Game Over! U were caught"), "black"); //Skapar text när spelet är över
+                stopUpdate(); //Function update stoppas
+
+            }
+               
+            i += 1 
             
         }
     }
+
     
 </script>
 

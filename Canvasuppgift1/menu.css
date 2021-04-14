@@ -1,0 +1,13 @@
+a {
+    font-size: 40px; /* Ändrar storleken på texten*/
+    color: black; /* Ändrar färgen på texten*/
+    margin-left: 500px; /* Ändrar placeringen på texten*/
+    text-decoration: none; /* Tar bort underline på länken*/
+    background-color: white; 
+    border-radius: 10px; /* Fixar border och färg på denna och nästa rad */
+    border: 3px solid black;
+}
+a:hover{
+    color: blue; /* Ändrar färgen på texten*/
+    border-color:blue; /* Ändrar färg på border*/
+}
