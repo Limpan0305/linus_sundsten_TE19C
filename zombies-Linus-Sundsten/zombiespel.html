@@ -42,6 +42,10 @@
             else
                 zombie.y -= zombie.speed
 
+            if (keyboard.f) //Refreshar sidan
+                location.reload();
+
+
             if (keyboard.space) //Går tillbaka till menyn med spacebar
                 window.open("menu.html", "menu.html")
 
