@@ -3,16 +3,16 @@
 <head>
 <script src="https://spelprogrammering.nu/simple.js"> //Laddar in mitt bibliotek
 
-    var zombies = []; 
+    var zombies = []; //Skapar en lista 
     
-    var i = 0; 
+    var i = 0;  //Ger variabeln ett värde
 
     while (i < 10) //Väljer antal zombies som ska vara med i spelet
     {
         zombies.push({x: random(totalWidth), //Skapar min zombie på raderna nedan
                       y: random(totalHeight),
                       speed: random(1,5)});
-        i += 1; //Lägger till en zombie i taget
+        i += 1; 
     }
     hideMouse(); //Gömmmer musen från spelet
     
@@ -32,12 +32,12 @@
             picture(zombie.x, zombie.y, "../bilder/zombien.png") //Bild för zombiesarna
             picture(mouse.x, mouse.y, "../bilder/man.png") //Bild för spelaren du kan kontrollera
 
-            if (zombie.x < mouse.x) //Nedanför är hur zombiesarna ska rör sig i synk med vart de är relativt med vart din egna spelare är för att zombien ska komma så nära dig som möjligt och ta dig. 
+            if (zombie.x < mouse.x) //Denna och nästa else sats är hur zombien ska röra sig horisontellt för att ta din egen spelare
                 zombie.x += zombie.speed
             else
                 zombie.x -= zombie.speed
 
-            if (zombie.y < mouse.y)
+            if (zombie.y < mouse.y) //Denna och nästa else sats är hur zombien ska röra sig vertikalt för att ta din egen spelare
                 zombie.y += zombie.speed
             else
                 zombie.y -= zombie.speed
